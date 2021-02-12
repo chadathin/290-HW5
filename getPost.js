@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 7321);
 
 app.get('/',function(req,res){
   res.render('home.handlebars') //We can omit the .handlebars extension as we do below
@@ -20,7 +20,7 @@ app.get('/',function(req,res){
 app.post('/sent', function(req,res){
   var queries = [];
   for (var q in req.body){
-    qParams.push({'name':q,'value':req.body[q]})
+    queries.push({'name':q,'value':req.body[q]})
   }
   //console.log(queries);
   //console.log(req.body);
